@@ -1,0 +1,18 @@
+<h1>Welcome to the CTA train schedule lookup!</h1>
+<form action = "/result">
+  <label for = "stations">Select your station:</label>
+  <select name = "stations" id = "stations">
+    <%@parent_stations_hash.each do |station_id, station_name|%>
+      <option value = <%=station_id%>><%=station_name%></option>
+    <%end%>
+  </select>
+  <div class = "radio-button">
+    <p>Select direction:</p>
+    <input type = "radio" id = "1" name = "direction" value = "1">
+    <label for = "1">Northbound</label>
+    <input type = "radio" id = "5" name = "direction" value = "5">
+    <label for = "5">Southbound</label>`
+  </div>
+  <button>Press this button to see the results page</button>
+</form>
+<p>NB: <br>For Green Line W = N, E = S<br>For Pink Line E = N, W = S</p> 
