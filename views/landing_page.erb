@@ -1,17 +1,21 @@
 <h1>Welcome to the CTA train schedule lookup!</h1>
 <form action = "/result">
-  <label for = "stations">Select your station:</label>
-  <select name = "stations" id = "stations">
+  <label for = "station">Select your station:</label>
+  <select name = "station" id = "station">
     <%@parent_stations_hash.each do |station_id, station_name|%>
       <option value = <%=station_id%>><%=station_name%></option>
     <%end%>
   </select>
   <div class = "radio-button">
     <p>Select direction:</p>
-    <input type = "radio" id = "1" name = "direction" value = "1">
-    <label for = "1">Northbound</label>
-    <input type = "radio" id = "5" name = "direction" value = "5">
-    <label for = "5">Southbound</label>`
+    <input type = "radio" id = "north" name = "direction" value = "north">
+    <label for = "north">Northbound</label>
+    <input type = "radio" id = "south" name = "direction" value = "south">
+    <label for = "south">Southbound</label>
+    <input type = "radio" id = "west" name = "direction" value = "west">
+    <label for = "west">Northbound</label>
+    <input type = "radio" id = "east" name = "direction" value = "east">
+    <label for = "east">Southbound</label>
   </div>
   <button>Press this button to see the results page</button>
 </form>

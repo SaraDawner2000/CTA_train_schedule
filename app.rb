@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 require "sinatra/activerecord"
 require "csv"
+require "http"
 
 get("/") do
   stops_array = CSV.read("stops.csv")
@@ -11,5 +12,10 @@ get("/") do
   erb(:landing_page)
 end
 get("/result") do
+  direction = params["direction"]
+  station_id = params["station"]
+  api_url = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=#{ENV["CTA_API_KEY"]}&mapid=#{station_id}&outputType=JSON"
+  @raw_data = HTTP.get(api_url)
+
   erb(:result)
 end
