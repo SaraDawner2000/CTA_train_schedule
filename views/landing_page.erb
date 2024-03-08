@@ -2,7 +2,7 @@
 <form action = "/result">
   <label for = "station">Select your station:</label>
   <select name = "station" id = "station">
-    <%@parent_stations_hash.each do |station_id, station_name|%>
+    <%$parent_stations_hash.each do |station_id, station_name|%>
       <option value = <%=station_id%>><%=station_name%></option>
     <%end%>
   </select>
