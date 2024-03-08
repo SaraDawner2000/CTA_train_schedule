@@ -1,4 +1,41 @@
 <h1>The next arrivals for <%=@station_name%> are: </h1>
+<%@lines_hashed.each do |line, times|%>
+  <% if @lines.length > 1 %>
+    <h2><%=@line_name_hash[line]%>:</h2>
+  <% end %>
+  <h3><%=@line_direction_hash[line]["1"]%>:</h3>
+  <%if times["1"] == []%>
+    <p>No information available</p>
+  <%else%>
+    <%times["1"].each do |instance|%>
+      <div class = "line">
+        <p><%=Time.parse(instance["arrT"]).strftime("%I:%M:%S %p")%></p>
+        <%if instance["isApp"] == "1"%>
+          <p>, arriving soon</p>
+        <%end%>
+        <%if instance["isDly"] == "1"%>
+          <p>, delayed</p>
+        <%end%>
+      </div>
+    <%end%>
+  <%end%>
+  <h3><%=@line_direction_hash[line]["5"]%>:</h3>
+  <%if times["5"] == []%>
+    <p>No information available</p>
+  <%else%>
+    <%times["5"].each do |instance|%>
+      <div class = "line">
+        <p><%=Time.parse(instance["arrT"]).strftime("%I:%M:%S %p")%></p>
+        <%if instance["isApp"] == "1"%>
+          <p>, arriving soon</p>
+        <%end%>
+        <%if instance["isDly"] == "1"%>
+          <p>, delayed</p>
+        <%end%>
+      </div>
+    <%end%>
+  <%end%>
+<%end%>
 
 <form action = "/">
   <button>Press this button to go back to the landing page</button>
