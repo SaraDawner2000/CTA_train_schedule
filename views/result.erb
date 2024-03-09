@@ -2,9 +2,12 @@
 <div class = "result">
 <h1>The next arrivals for <%=@station_name%> are: </h1>
 <%@lines_hashed.each do |line, times|%>
-  <div class = "block <%=line%>">
+  <div class = "block">
   <% if @lines.length > 1 %>
+    <div class = "line-with-logo">
     <h2><%=@line_name_hash[line]%>:</h2>
+    <span class = "icon" width = "50px" height = "50px"><img class = "<%=line%>" src = "CTA-train-white.png" /></span>
+    </div>
   <% end %>
   <div class = "direction-block">
   <h3><%=@line_direction_hash[line]["1"]%>:</h3>

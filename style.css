@@ -31,11 +31,21 @@ body {
 }
 
 .block {
-  border-top: 5px double #000000;
+  border-top: 5px double #FFFFFF;
   color: #FFFFFF;
   width:100%;
 }
+.icon{
+  padding: 20px 20px 0 0;
+  margin: 0;
+}
 
+.icon img {
+  border-radius: 50%;
+  width: 50px;
+  height:50px;
+  
+}
 .Red {
   background-color: #C60C30;
 }
@@ -108,4 +118,12 @@ hr.dotted{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.result h2 {
+  margin: 0px;
+  padding: 20px 0 0 20px;
+}
+.line-with-logo {
+  display: flex;
+  justify-content: space-between;
 }
