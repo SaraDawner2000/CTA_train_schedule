@@ -4,7 +4,6 @@ require "sinatra/cookies"
 require "csv"
 require "http"
 require "date"
-
 get("/") do
   stops_array = CSV.read("stops.csv")
   parent_stations_array = stops_array.select {|stop| stop[0].match(/^4\d{4}$/)}
@@ -37,7 +36,7 @@ get("/result") do
   @station_id = params["station"]
   @station = $parent_stations_hash
   @station_name = @station[@station_id]
-  cookies.store("station", @station_id)
+  cookies.store("station", @station_name)
   api_url = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=#{ENV["CTA_API_KEY"]}&mapid=#{@station_id}&outputType=JSON"
   raw_data = HTTP.get(api_url)
   raw_data_string = raw_data.to_s

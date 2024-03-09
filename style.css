@@ -1,0 +1,110 @@
+.line {
+  display:flex;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+body {
+  background-color: #2166b1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  overflow:scroll;
+}
+
+.station-selection, .result {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 6px solid #C60C30;
+  outline: 2px solid #FFFFFF;
+  outline-offset: -6px;
+  border-radius:10px;
+}
+
+.block {
+  border-top: 5px double #000000;
+  color: #FFFFFF;
+  width:100%;
+}
+
+.Red {
+  background-color: #C60C30;
+}
+.P {
+  background-color: #522398;
+}
+.Y {
+  background-color: #F9E300;
+  color: #000000;
+}
+.Blue {
+  background-color: #00A1DE;
+}
+.G {
+  background-color: #009B3A;
+}
+.Pink {
+  background-color: #E27EA6;
+}
+.Org {
+  background-color: #F9461C;
+}
+.Brn {
+  background-color: #62361B;
+  
+}
+.station-selection {
+  justify-content: center;
+  align-items: center;
+}
+.station-selection h1{
+  margin: 30px;
+}
+.station-selection button{
+  margin: 20px;
+}
+.result h1 {
+  margin:0;
+  padding:15px 35px 5px 35px;
+}
+hr.dotted{
+  border-top: 2px dotted #FFFFFF;
+  border-bottom: 0;
+}
+.result-controls {
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+  display:flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+}
+.result-with-controls {
+  padding-top: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.direction-block {
+  padding-left: 20px;
+}
+.line {
+  padding: 0 20px 0 20px;
+}
+.result {
+  overflow: auto;
+}
+.station-selection-menu {
+  flex-direction: column;
+  align-items: center;
+}

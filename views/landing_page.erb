@@ -1,4 +1,6 @@
+<div class = "station-selection">
 <h1>Welcome to the CTA train schedule lookup!</h1>
+<div "station-selection-menu">
 <form action = "/result">
   <label for = "station">Select your station:</label>
   <select name = "station" id = "station">
@@ -8,7 +10,6 @@
   </select>
   <button>Look up</button>
 </form>
-<form action = "/result">
-  <input type = "hidden" name = "station" id = "station" value = <%=cookies.fetch("station")%> />
-  <button>Repeat previous search</button>
-</form>
+</div>
+<p>Last searched for: <%=cookies["station"]%></p>
+</div>

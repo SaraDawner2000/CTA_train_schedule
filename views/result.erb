@@ -1,8 +1,12 @@
+<div class = "result-with-controls">
+<div class = "result">
 <h1>The next arrivals for <%=@station_name%> are: </h1>
 <%@lines_hashed.each do |line, times|%>
+  <div class = "block <%=line%>">
   <% if @lines.length > 1 %>
     <h2><%=@line_name_hash[line]%>:</h2>
   <% end %>
+  <div class = "direction-block">
   <h3><%=@line_direction_hash[line]["1"]%>:</h3>
   <%if times["1"] == []%>
     <p>No information available</p>
@@ -19,6 +23,9 @@
       </div>
     <%end%>
   <%end%>
+  </div>
+  <hr class="dotted">
+  <div class = "direction-block">
   <h3><%=@line_direction_hash[line]["5"]%>:</h3>
   <%if times["5"] == []%>
     <p>No information available</p>
@@ -35,8 +42,17 @@
       </div>
     <%end%>
   <%end%>
+  </div>
+  </div>
 <%end%>
-
-<form action = "/">
-  <button>Press this button to go back to the landing page</button>
-</form>
+</div>
+<div class = "result-controls">
+  <form action = "/result">
+    <input type = "hidden" name = "station" id = "station" value = <%=@station_id%> />
+    <button style = "width:75px">Refresh</button>
+  </form>
+  <form action = "/">
+    <button style = "width:75px">Back</button>
+  </form>
+</div>
+</div>
