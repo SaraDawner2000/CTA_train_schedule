@@ -1,3 +1,4 @@
+<%=cookies["station"]%>
 <div class = "station-selection">
 <h1>Welcome to the CTA train schedule lookup!</h1>
 <div "station-selection-menu">
@@ -11,5 +12,12 @@
   <button>Look up</button>
 </form>
 </div>
-<p>Last searched for: <%=cookies["station"]%></p>
+<form action = "/result">
+<%if cookies["station"].match(/^4\d{4}$/)%>
+<input type = "hidden" value = "<%=cookies["station"]%>" name = "station" id = "station">
+<%else%>
+<input type = "hidden" value = "40830" name = "station" id = "station">
+<%end%>
+<button>Repeat previous search</button>
+</form>
 </div>
