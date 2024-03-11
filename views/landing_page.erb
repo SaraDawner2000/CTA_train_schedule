@@ -1,7 +1,7 @@
 <div class = "station-selection">
 <h1>Welcome to the CTA train schedule lookup!</h1>
 <div "station-selection-menu">
-<form action = "/result">
+<form class = "search-box" action = "/result">
   <label for = "station">Select your station:</label>
   <select name = "station" id = "station">
     <%$parent_stations_hash.each do |station_id, station_name|%>
