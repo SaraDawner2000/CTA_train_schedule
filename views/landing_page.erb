@@ -13,7 +13,7 @@
 </form>
 </div>
 <form action = "/result">
-<%if cookies["station"].match(/^4\d{4}$/)%>
+<%if cookies.empty?%>
 <input type = "hidden" value = "<%=cookies["station"]%>" name = "station" id = "station">
 <%else%>
 <input type = "hidden" value = "40830" name = "station" id = "station">
