@@ -1,8 +1,9 @@
 <div class = "station-selection">
 <h1>Welcome to the CTA train schedule lookup!</h1>
-<div "station-selection-menu">
+<div class = "station-selection-menu">
 <form class = "search-box" action = "/result">
   <label for = "station">Select your station:</label>
+  <!--in the select HTML element, generate a list from the parent_stations hash that submits the station ID as the value while using the station name as the label-->
   <select name = "station" id = "station">
     <%$parent_stations_hash.each do |station_id, station_name|%>
       <option value = <%=station_id%>><%=station_name%></option>
@@ -12,9 +13,10 @@
 </form>
 </div>
 <form action = "/result">
+<!--If the sinatra cookies class is empty, submit the first station on the list ("18th") as the "previous search" with an input type = "hidden"-->
 <%if cookies.empty?%>
 <input type = "hidden" value = "40830" name = "station" id = "station">
-<%else%>
+<%else%><!--Else, submit the station_id stored in cookies-->
 <input type = "hidden" value = "<%=cookies["station"]%>" name = "station" id = "station">
 <%end%>
 <button>Repeat previous search</button>

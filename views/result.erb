@@ -1,13 +1,16 @@
 <div class = "result-with-controls">
 <div class = "result">
 <h1>The next arrivals for <%=@station_name%> are: </h1>
+<!--Generate the results from three hashes, the hash that matches the line code names to the full line names (line_name_hash), the hash that matches the line code names to what the two directions are for this line (line_direction_hash) and the hash with the filtered and sorted server response (lines_hashed)-->
 <%@lines_hashed.each do |line, times|%>
   <div class = "block">
   <div class = "line-with-logo">
   <h2><%=@line_name_hash[line]%>:</h2>
+  <!--Create an icon for the line with the class for the icon dependent on which line is currently being generated-->
   <span class = "icon" width = "50px" height = "50px"><img class = "<%=line%>" src = "CTA-train-white.png" /></span>
   </div>
   <div class = "direction-block">
+  <!--Generate the results for the first direction, if no arrival times are available for this direction, display message-->
   <h3><%=@line_direction_hash[line]["1"]%>:</h3>
   <%if times["1"] == []%>
     <p>No information available</p>
@@ -26,6 +29,7 @@
   <%end%>
   </div>
   <hr class="dotted">
+  <!--Generate the results for the second direction, if no arrival times are available for this direction, display message-->
   <div class = "direction-block">
   <h3><%=@line_direction_hash[line]["5"]%>:</h3>
   <%if times["5"] == []%>
@@ -48,10 +52,12 @@
 <%end%>
 </div>
 <div class = "result-controls">
+  <!--Resubmit the station id to the results page to refresh the page results with an input type = "hidden"-->
   <form action = "/result">
     <input type = "hidden" name = "station" id = "station" value = <%=@station_id%> />
     <button style = "width:75px">Refresh</button>
   </form>
+  <!--Take the user back to the landing page-->
   <form action = "/">
     <button style = "width:75px">Back</button>
   </form>
