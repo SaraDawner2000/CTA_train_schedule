@@ -15,7 +15,7 @@ The arrival times are formatted to "%I:%M:%S %p". Information about whether the 
 
 There is a "Refresh" button, which resubmits the station selected, and a "Back" button, which takes the user back to the landing page.
 ## Possible upgrades
-A way for the user to filter the results by available line and direction, and a way of saving that information to a cookie, may be implemented, and would be helpful for the larger stations.
+A way for the user to filter the results by available line and direction, and a way of saving that information to a cookie may be implemented, and would be helpful for the larger stations.
 
 Currently the web service cannot differenciate between regular stations and final stops. For instance, for Kimball station, which is the final stop of the Brown line, the results page shows the arriving trains as "Kimball-bound", which can be confusing. A mechanic for generating the final stops results pages differently than the rest can be implemented.
 
