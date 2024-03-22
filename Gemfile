@@ -12,6 +12,7 @@ gem "puma", "~> 5.0"
 
 # use active record
 gem "sinatra-activerecord"
+gem "sqlite3", "~> 1.4"
 
 group :development do
   gem "better_errors"
@@ -23,7 +24,6 @@ end
 group :development, :test do
   gem "grade_runner"
   gem "pry"
-  gem "sqlite3", "~> 1.4"
 end
 
 group :test do
